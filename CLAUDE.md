@@ -19,4 +19,12 @@ All repo content is English: code, comments, docs, commit messages, test names.
 
 ## Architecture
 
-Not defined yet. When creating new structure, propose it before implementing and record the decision in the README.
+Four layers with one-way dependencies: `presentation → application → data → domain`.
+
+- `src/domain` — types and pure logic (filters, summary, formatting). Imports nothing.
+- `src/data` — mock data, MSW handlers, API client.
+- `src/application` — hooks holding state and orchestration.
+- `src/presentation` — `theme/`, `screens/`, `components/`; styles in a sibling `Foo.styles.ts`.
+
+`domain` and `data` never import React or React Native. Single screen, no navigation library — the
+detail view is a `Modal`. Details and trade-offs live in the README; record new decisions there.
