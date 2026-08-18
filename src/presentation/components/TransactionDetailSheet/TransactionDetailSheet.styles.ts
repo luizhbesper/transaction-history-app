@@ -1,0 +1,92 @@
+import {
+	colors,
+	font,
+	radius,
+	shadow,
+	size,
+	space,
+	tabular,
+} from "@presentation/theme";
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+	head: { alignItems: "center", gap: 10 },
+	avatar: {
+		width: size.avatarSheet,
+		height: size.avatarSheet,
+		borderRadius: size.avatarSheet / 2,
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	initial: { fontSize: 21, fontWeight: font.weight.black },
+	amount: {
+		fontSize: font.size.amountXl,
+		fontWeight: font.weight.black,
+		letterSpacing: font.letterSpacing.amountXl,
+		fontVariant: tabular,
+	},
+	income: { color: colors.income },
+	expense: { color: colors.ink },
+	merchant: {
+		fontSize: font.size.cta,
+		fontWeight: font.weight.bold,
+		color: colors.ink,
+	},
+	card: {
+		marginTop: space.xl,
+		backgroundColor: colors.surfaceTint,
+		borderRadius: radius.optionCard,
+		paddingHorizontal: space.lg,
+	},
+	detail: {
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "space-between",
+		gap: space.lg,
+		paddingVertical: space.md,
+		borderBottomWidth: 1,
+		borderBottomColor: colors.dividerStrong,
+	},
+	detailLast: { borderBottomWidth: 0 },
+	label: {
+		fontSize: font.size.bodySm,
+		fontWeight: font.weight.medium,
+		color: colors.textSecondary,
+	},
+	value: {
+		flexShrink: 1,
+		textAlign: "right",
+		fontSize: 14,
+		fontWeight: font.weight.bold,
+		color: colors.ink,
+	},
+	status: {
+		fontSize: 13,
+		fontWeight: font.weight.bold,
+		color: colors.income,
+		backgroundColor: colors.incomeBg,
+		borderRadius: radius.pill,
+		paddingVertical: space.xs,
+		paddingHorizontal: 10,
+		overflow: "hidden",
+	},
+	transactionId: {
+		fontSize: font.size.bodySm,
+		fontWeight: font.weight.semibold,
+		color: colors.textOnCard,
+		fontVariant: tabular,
+	},
+	done: {
+		marginTop: 18,
+		alignItems: "center",
+		paddingVertical: 15,
+		borderRadius: radius.pill,
+		backgroundColor: colors.coral,
+		boxShadow: shadow.ctaCoralLarge,
+	},
+	doneLabel: {
+		fontSize: font.size.cta,
+		fontWeight: font.weight.bold,
+		color: colors.surface,
+	},
+});
