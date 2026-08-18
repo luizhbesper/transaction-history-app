@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
 	},
 	count: {
 		marginLeft: "auto",
+		flexShrink: 0,
 		fontSize: font.size.captionSm,
 		fontWeight: font.weight.bold,
 		color: colors.inkOnBlue,

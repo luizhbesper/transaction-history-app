@@ -14,6 +14,7 @@ import Animated, {
 	useSharedValue,
 	withTiming,
 } from "react-native-reanimated";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { styles } from "./BottomSheet.styles";
 
 /** Options a caller can pass alongside the sheet content. */
@@ -65,6 +66,7 @@ const EASING = Easing.bezier(0.22, 1, 0.36, 1);
  * @returns {React.JSX.Element | null} The modal while a sheet is open, nothing otherwise.
  */
 export function BottomSheetHost(): React.JSX.Element | null {
+	const insets = useSafeAreaInsets();
 	const [content, setContent] = useState<ReactNode | null>(null);
 	const onDismiss = useRef<(() => void) | undefined>(undefined);
 	const progress = useSharedValue(0);
@@ -126,7 +128,11 @@ export function BottomSheetHost(): React.JSX.Element | null {
 					/>
 				</Animated.View>
 				<Animated.View
-					style={[styles.sheet, sheetStyle]}
+					style={[
+						styles.sheet,
+						{ paddingBottom: 30 + insets.bottom },
+						sheetStyle,
+					]}
 					onLayout={(event) => {
 						height.value = event.nativeEvent.layout.height;
 					}}
