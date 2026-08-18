@@ -85,6 +85,26 @@ describe("useTransactionFilters", () => {
 		expect(result.current.isFiltered).toBe(true);
 	});
 
+	it("keeps the summary on the whole period when the type filter narrows the list", async () => {
+		// Arrange
+		const { result } = await renderHook(() =>
+			useTransactionFilters(TRANSACTIONS, NOW),
+		);
+
+		// Act
+		await act(() => {
+			result.current.setType("income");
+		});
+
+		// Assert
+		expect(result.current.count).toBe(1);
+		expect(result.current.summary).toEqual({
+			income: 1840,
+			expenses: 60.93,
+			net: 1779.07,
+		});
+	});
+
 	it("restores the full list when the filters are cleared", async () => {
 		// Arrange
 		const { result } = await renderHook(() =>

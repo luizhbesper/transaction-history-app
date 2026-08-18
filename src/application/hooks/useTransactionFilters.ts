@@ -28,6 +28,7 @@ type TransactionFiltersState = {
 	setRange: (range: RangeFilter) => void;
 	clearFilters: () => void;
 	items: TransactionListItem[];
+	/** Totals for the period and search, ignoring the type filter — see the memo below. */
 	summary: TransactionSummary;
 	/** How many transactions matched, for the `{n} results` count. */
 	count: number;
@@ -38,8 +39,7 @@ type TransactionFiltersState = {
 /**
  * Holds the filter state and derives everything the list renders from it.
  *
- * Filtering, totals and day grouping run in one memo so a keystroke walks the list once,
- * and the summary always describes exactly what is on screen.
+ * Filtering, totals and day grouping run in one memo so a keystroke walks the list once.
  *
  * @param {Transaction[]} transactions - The full history to narrow down.
  * @param {Date} now - The reference time the date range is measured back from.
@@ -63,10 +63,22 @@ export const useTransactionFilters = (
 	);
 
 	const derived = useMemo(() => {
-		const filtered = filterTransactions(transactions, filters, now);
+		// The summary answers "what happened in this period", so it follows the range and
+		// the search but not the type filter: narrowing to income would otherwise zero the
+		// expenses column the user tapped to get there, and leave net meaningless.
+		const scoped = filterTransactions(
+			transactions,
+			{ ...filters, type: "all" },
+			now,
+		);
+		const filtered =
+			filters.type === "all"
+				? scoped
+				: scoped.filter((transaction) => transaction.type === filters.type);
+
 		return {
 			items: groupByDay(filtered),
-			summary: summarize(filtered),
+			summary: summarize(scoped),
 			count: filtered.length,
 		};
 	}, [transactions, filters, now]);
