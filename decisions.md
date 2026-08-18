@@ -123,3 +123,36 @@ cheaper to include than to retrofit.
 `transactionsApi.ts` is a module of functions, not an implementation behind an
 interface. A single implementation hidden behind an abstraction is indirection with
 nobody paying for it. If a second data source ever appears, that file is the seam.
+
+## `loadedAt` instead of reading the clock in render
+
+`useTransactions` stamps a `Date` when a load resolves and hands it out. Filtering and the
+`TODAY` / `YESTERDAY` headers both need a "now", and calling `new Date()` in the screen would
+produce a new object every render — busting the derivation memo on every keystroke, and
+letting the day labels drift in a session left open past midnight. One value, refreshed
+exactly when the data is.
+
+The same hook keeps a request counter in a ref: a pull-to-refresh fired while another load is
+still in flight would otherwise be free to resolve out of order.
+
+## The debounce hook returns its setter
+
+`useDebouncedValue(value, delay)` returns `[debounced, setDebounced]` rather than just the
+value. The clear button in the search field has to reset the field *and* the pending search
+at once — without the setter, a keystroke already in flight lands 300 ms after the field was
+cleared and the list filters itself again. Setting both in the same batch reschedules the
+timer, so the stale keystroke can no longer arrive.
+
+## View state stays in the screen
+
+`useTransactionFilters` owns the filters and the list derived from them. The detail sheet's
+`selected` transaction and the range sheet's open flag are `useState` in the screen: nothing
+outside the view cares about them, and putting them in the application layer would only make
+the hook harder to describe.
+
+## `@testing-library/react-native` for the hook tests
+
+The repo had only `react-test-renderer`, which has no `renderHook`. Rather than hand-roll one,
+RTL is the RN ecosystem standard and covers the presentation-layer component tests too. Its
+v14 API is async (`await renderHook`, `await act`), and the mock's 1100 ms latency is skipped
+with fake timers rather than waited out.
