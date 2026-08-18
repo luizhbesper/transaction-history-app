@@ -56,14 +56,16 @@ import React or React Native.**
 ```
 src/
   domain/                     # pure TypeScript, testable without RN
-    transaction.ts            # Transaction, TransactionType, TypeFilter, DateRange
-    filters.ts                # filterTransactions, summarize, groupByDay
-    format.ts                 # formatCurrency, formatDate (Intl)
+    transaction/              # each file holds a type and the function producing it
+      index.ts                # barrel — consumers import from `@domain/transaction`
+      Transaction.ts
+      TransactionFilters.ts   # TypeFilter, RangeFilter + filterTransactions, hasActiveFilters
+      TransactionSummary.ts   # + summarize
+      TransactionListItem.ts  # + groupByDay
 
   data/                       # everything that talks to the outside
-    transactions.mock.ts      # 24+ realistic transactions
-    handlers.ts               # MSW handlers (success / error / empty)
-    transactionsApi.ts        # fetch → Transaction[]
+    transactions.json         # 50 realistic transactions, dates as day offsets
+    transactionsApi.ts        # fetchTransactions → Transaction[], with latency
 
   application/                # state and orchestration (hooks)
     useTransactions.ts        # fetch, loading/error/empty, refresh, retry
@@ -72,6 +74,11 @@ src/
 
   presentation/
     theme/tokens.ts           # colors, spacing, radius, typography
+    utils/                    # Intl formatters, singletons at module level
+      index.ts                # barrel — `@presentation/utils`
+      currency.ts             # formatCurrency, formatSignedCurrency
+      date.ts                 # formatTime, formatDayLabel, formatFullDate
+      transactionId.ts        # maskTransactionId
     screens/                  # TransactionsScreen.tsx + .styles.ts
     components/               # SummaryCard, SearchInput, FilterChips,
                               # TransactionItem, TransactionDetailSheet, ListStates
@@ -86,15 +93,26 @@ src/
   without a folder per component or a central `styles/` directory.
 - **Named exports only** (enforced by Biome's `noDefaultExport`): one canonical name per symbol,
   greppable and refactor-safe.
-- **MSW as the mock source**, so the app fetches over HTTP exactly as it would in production;
-  swapping in a real API touches only `data/`.
+- **A local JSON mock instead of MSW.** MSW v2 needs a browser-grade Fetch, Streams and
+  `XMLHttpRequest`, none of which Hermes provides on React Native 0.86. The reasoning, and what
+  the trade-off costs, is written up in [`decisions.md`](./decisions.md).
+- **One file per domain type, alongside the function that produces it.** `summarize` sits with
+  `TransactionSummary`, `groupByDay` with `TransactionListItem`. A single `filters.ts` holding all
+  four would have been a name that lies: `summarize` and `groupByDay` take no filters.
+- **Layer aliases** `@domain` / `@data` / `@application` / `@presentation`, resolved by hand in
+  `metro.config.js` (a leading `@` makes Metro treat the name as an npm scope, so
+  `extraNodeModules` never sees it as a prefix). Mirrored in `tsconfig.json` and `jest.config.js`.
+- **Formatting is presentation, not domain.** `domain` decides *what* the numbers are; turning
+  them into `−$54.18` or `TODAY` is a rendering choice, and an en-US one at that. So `groupByDay`
+  emits the raw day on each header and the screen labels it.
 
 ### Trade-offs
 
 - No `TransactionRepository` interface — a single implementation behind an abstraction is
   indirection without a payer. `transactionsApi.ts` is the seam if a second source ever appears.
-- No `src/shared`, `src/config` or barrel `index.ts` files: they get added when a second consumer
-  actually exists, not upfront.
+- No `src/shared` or `src/config`: they get added when a second consumer actually exists, not
+  upfront. Barrel `index.ts` files exist only where a folder is a unit consumers import as one
+  (`@domain/transaction`, `@presentation/utils`) — not one per directory.
 - Filtering and searching happen client-side over the full list. Fine for hundreds of rows;
   thousands would move filtering server-side and paginate.
 

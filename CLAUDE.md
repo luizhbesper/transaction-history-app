@@ -21,10 +21,12 @@ All repo content is English: code, comments, docs, commit messages, test names.
 
 Four layers with one-way dependencies: `presentation → application → data → domain`.
 
-- `src/domain` — types and pure logic (filters, summary, formatting). Imports nothing.
-- `src/data` — mock data, MSW handlers, API client.
+- `src/domain` — types and pure logic (filters, summary, grouping). Imports nothing.
+  Formatting is *not* domain: it lives in `presentation/utils/`.
+- `src/data` — mock dataset (`transactions.json`) and the API client that serves it.
 - `src/application` — hooks holding state and orchestration.
-- `src/presentation` — `theme/`, `screens/`, `components/`; styles in a sibling `Foo.styles.ts`.
+- `src/presentation` — `theme/`, `utils/`, `screens/`, `components/`; styles in a sibling `Foo.styles.ts`.
 
-`domain` and `data` never import React or React Native. Single screen, no navigation library — the
+`domain` and `data` never import React or React Native. Import across layers through the
+`@domain` / `@data` / `@application` / `@presentation` aliases; stay relative within a folder. Single screen, no navigation library — the
 detail view is a `Modal`. Details and trade-offs live in the README; record new decisions there.
