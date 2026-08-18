@@ -1,5 +1,8 @@
 const path = require("node:path");
 const { getDefaultConfig, mergeConfig } = require("@react-native/metro-config");
+const {
+	wrapWithReanimatedMetroConfig,
+} = require("react-native-reanimated/metro-config");
 
 /**
  * Layer aliases, declared here for Metro, in `tsconfig.json` for the compiler and in
@@ -26,4 +29,8 @@ const config = {
 	},
 };
 
-module.exports = mergeConfig(getDefaultConfig(__dirname), config);
+// Reanimated's wrapper is what feeds its worklet bundle through Metro; without it the
+// worklets runtime fails to initialise at startup.
+module.exports = wrapWithReanimatedMetroConfig(
+	mergeConfig(getDefaultConfig(__dirname), config),
+);
