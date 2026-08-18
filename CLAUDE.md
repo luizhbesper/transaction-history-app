@@ -1,6 +1,6 @@
 # transaction-history-app
 
-React Native (CLI) transaction history app. Challenge spec: `.claude/docs/challenge-description.md`.
+React Native (CLI) transaction history app.
 
 ## Stack
 
