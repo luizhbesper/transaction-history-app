@@ -1,0 +1,452 @@
+[
+	{
+		"id": "txn_9f21a4c7",
+		"merchant": "Blue Bottle Coffee",
+		"amount": -6.75,
+		"category": "Food & Drink",
+		"type": "expense",
+		"daysAgo": 0,
+		"at": [8, 42]
+	},
+	{
+		"id": "txn_3b88de10",
+		"merchant": "Metro Transit",
+		"amount": -2.9,
+		"category": "Transport",
+		"type": "expense",
+		"daysAgo": 0,
+		"at": [8, 12]
+	},
+	{
+		"id": "txn_77c0aa93",
+		"merchant": "Sunfresh Market",
+		"amount": -54.18,
+		"category": "Groceries",
+		"type": "expense",
+		"daysAgo": 0,
+		"at": [13, 5]
+	},
+	{
+		"id": "txn_1de44f02",
+		"merchant": "Payroll Deposit",
+		"amount": 1840.0,
+		"category": "Income",
+		"type": "income",
+		"daysAgo": 0,
+		"at": [6, 30]
+	},
+	{
+		"id": "txn_5c19ba30",
+		"merchant": "Taqueria Norte",
+		"amount": -14.8,
+		"category": "Food & Drink",
+		"type": "expense",
+		"daysAgo": 0,
+		"at": [12, 30]
+	},
+	{
+		"id": "txn_a2f9b731",
+		"merchant": "Northside Pharmacy",
+		"amount": -23.4,
+		"category": "Health",
+		"type": "expense",
+		"daysAgo": 1,
+		"at": [17, 48]
+	},
+	{
+		"id": "txn_c41802ab",
+		"merchant": "Streamline Media",
+		"amount": -15.99,
+		"category": "Entertainment",
+		"type": "expense",
+		"daysAgo": 1,
+		"at": [11, 0]
+	},
+	{
+		"id": "txn_5ba7cc61",
+		"merchant": "Rideshare",
+		"amount": -18.6,
+		"category": "Transport",
+		"type": "expense",
+		"daysAgo": 1,
+		"at": [22, 14]
+	},
+	{
+		"id": "txn_0e39d5f8",
+		"merchant": "Freelance Invoice #204",
+		"amount": 620.0,
+		"category": "Income",
+		"type": "income",
+		"daysAgo": 1,
+		"at": [9, 5]
+	},
+	{
+		"id": "txn_d70c48e1",
+		"merchant": "Corner Bakery",
+		"amount": -9.4,
+		"category": "Food & Drink",
+		"type": "expense",
+		"daysAgo": 1,
+		"at": [7, 55]
+	},
+	{
+		"id": "txn_88b1e447",
+		"merchant": "Corner Bakery",
+		"amount": -11.25,
+		"category": "Food & Drink",
+		"type": "expense",
+		"daysAgo": 2,
+		"at": [8, 55]
+	},
+	{
+		"id": "txn_4c7f2019",
+		"merchant": "City Power & Light",
+		"amount": -96.4,
+		"category": "Bills & Utilities",
+		"type": "expense",
+		"daysAgo": 2,
+		"at": [10, 30]
+	},
+	{
+		"id": "txn_2a90fbcd",
+		"merchant": "Thread & Co.",
+		"amount": -78.0,
+		"category": "Shopping",
+		"type": "expense",
+		"daysAgo": 2,
+		"at": [16, 22]
+	},
+	{
+		"id": "txn_ff3a6b02",
+		"merchant": "Metro Transit",
+		"amount": -2.9,
+		"category": "Transport",
+		"type": "expense",
+		"daysAgo": 2,
+		"at": [8, 20]
+	},
+	{
+		"id": "txn_6f4b3e57",
+		"merchant": "Refund — Thread & Co.",
+		"amount": 32.5,
+		"category": "Income",
+		"type": "income",
+		"daysAgo": 3,
+		"at": [12, 40]
+	},
+	{
+		"id": "txn_b7c5d182",
+		"merchant": "Sunfresh Market",
+		"amount": -37.92,
+		"category": "Groceries",
+		"type": "expense",
+		"daysAgo": 3,
+		"at": [18, 10]
+	},
+	{
+		"id": "txn_31e8c04a",
+		"merchant": "Arcade Bar",
+		"amount": -26.0,
+		"category": "Entertainment",
+		"type": "expense",
+		"daysAgo": 3,
+		"at": [21, 5]
+	},
+	{
+		"id": "txn_ee1207a3",
+		"merchant": "Mobile Plan",
+		"amount": -45.0,
+		"category": "Bills & Utilities",
+		"type": "expense",
+		"daysAgo": 4,
+		"at": [9, 0]
+	},
+	{
+		"id": "txn_9c02b4ff",
+		"merchant": "Noodle House",
+		"amount": -22.15,
+		"category": "Food & Drink",
+		"type": "expense",
+		"daysAgo": 4,
+		"at": [19, 35]
+	},
+	{
+		"id": "txn_71ad8e26",
+		"merchant": "Cashback Reward",
+		"amount": 12.4,
+		"category": "Income",
+		"type": "income",
+		"daysAgo": 4,
+		"at": [7, 15]
+	},
+	{
+		"id": "txn_c8d51907",
+		"merchant": "Gas & Go",
+		"amount": -48.2,
+		"category": "Transport",
+		"type": "expense",
+		"daysAgo": 4,
+		"at": [16, 40]
+	},
+	{
+		"id": "txn_ac5541d9",
+		"merchant": "Metro Transit",
+		"amount": -2.9,
+		"category": "Transport",
+		"type": "expense",
+		"daysAgo": 5,
+		"at": [8, 5]
+	},
+	{
+		"id": "txn_7b2e93c5",
+		"merchant": "Bookshop Corner",
+		"amount": -34.99,
+		"category": "Shopping",
+		"type": "expense",
+		"daysAgo": 5,
+		"at": [15, 10]
+	},
+	{
+		"id": "txn_1a4f7d60",
+		"merchant": "Greenline Grocers",
+		"amount": -62.35,
+		"category": "Groceries",
+		"type": "expense",
+		"daysAgo": 5,
+		"at": [11, 20]
+	},
+	{
+		"id": "txn_04e6f2ba",
+		"merchant": "Blue Bottle Coffee",
+		"amount": -5.5,
+		"category": "Food & Drink",
+		"type": "expense",
+		"daysAgo": 6,
+		"at": [8, 30]
+	},
+	{
+		"id": "txn_e59c0138",
+		"merchant": "Vision Center",
+		"amount": -85.0,
+		"category": "Health",
+		"type": "expense",
+		"daysAgo": 6,
+		"at": [14, 0]
+	},
+	{
+		"id": "txn_2d6b81af",
+		"merchant": "Pizzeria Vesuvio",
+		"amount": -31.75,
+		"category": "Food & Drink",
+		"type": "expense",
+		"daysAgo": 6,
+		"at": [20, 15]
+	},
+	{
+		"id": "txn_8f07c2e4",
+		"merchant": "Sole Society",
+		"amount": -119.0,
+		"category": "Shopping",
+		"type": "expense",
+		"daysAgo": 8,
+		"at": [13, 45]
+	},
+	{
+		"id": "txn_43ba15d9",
+		"merchant": "Parking Authority",
+		"amount": -12.0,
+		"category": "Transport",
+		"type": "expense",
+		"daysAgo": 9,
+		"at": [9, 30]
+	},
+	{
+		"id": "txn_6e90f371",
+		"merchant": "Starbucks",
+		"amount": -7.15,
+		"category": "Food & Drink",
+		"type": "expense",
+		"daysAgo": 10,
+		"at": [8, 5]
+	},
+	{
+		"id": "txn_be9017c4",
+		"merchant": "Dental Clinic",
+		"amount": -110.0,
+		"category": "Health",
+		"type": "expense",
+		"daysAgo": 12,
+		"at": [15, 20]
+	},
+	{
+		"id": "txn_0c58ae23",
+		"merchant": "Sunfresh Market",
+		"amount": -44.6,
+		"category": "Groceries",
+		"type": "expense",
+		"daysAgo": 13,
+		"at": [12, 10]
+	},
+	{
+		"id": "txn_97d3b60e",
+		"merchant": "Internet Fiber",
+		"amount": -69.99,
+		"category": "Bills & Utilities",
+		"type": "expense",
+		"daysAgo": 15,
+		"at": [10, 0]
+	},
+	{
+		"id": "txn_dd7b3c08",
+		"merchant": "Cinema Eleven",
+		"amount": -24.5,
+		"category": "Entertainment",
+		"type": "expense",
+		"daysAgo": 16,
+		"at": [20, 40]
+	},
+	{
+		"id": "txn_5410e9fb",
+		"merchant": "Interest Payment",
+		"amount": 8.25,
+		"category": "Income",
+		"type": "income",
+		"daysAgo": 18,
+		"at": [6, 0]
+	},
+	{
+		"id": "txn_b26df845",
+		"merchant": "Paper & Ink",
+		"amount": -18.4,
+		"category": "Shopping",
+		"type": "expense",
+		"daysAgo": 20,
+		"at": [14, 25]
+	},
+	{
+		"id": "txn_7a3c1e95",
+		"merchant": "Sunfresh Market",
+		"amount": -41.07,
+		"category": "Groceries",
+		"type": "expense",
+		"daysAgo": 22,
+		"at": [11, 45]
+	},
+	{
+		"id": "txn_f018c5d7",
+		"merchant": "Rideshare",
+		"amount": -21.3,
+		"category": "Transport",
+		"type": "expense",
+		"daysAgo": 24,
+		"at": [23, 5]
+	},
+	{
+		"id": "txn_3e7091ca",
+		"merchant": "Vinyl & Co.",
+		"amount": -52.0,
+		"category": "Entertainment",
+		"type": "expense",
+		"daysAgo": 26,
+		"at": [17, 30]
+	},
+	{
+		"id": "txn_a4b62f09",
+		"merchant": "Water District",
+		"amount": -38.75,
+		"category": "Bills & Utilities",
+		"type": "expense",
+		"daysAgo": 28,
+		"at": [9, 15]
+	},
+	{
+		"id": "txn_5518ac7e",
+		"merchant": "Rent Transfer",
+		"amount": -1250.0,
+		"category": "Bills & Utilities",
+		"type": "expense",
+		"daysAgo": 31,
+		"at": [9, 0]
+	},
+	{
+		"id": "txn_2f80b5da",
+		"merchant": "Payroll Deposit",
+		"amount": 1840.0,
+		"category": "Income",
+		"type": "income",
+		"daysAgo": 33,
+		"at": [6, 30]
+	},
+	{
+		"id": "txn_cb3719e6",
+		"merchant": "Blue Bottle Coffee",
+		"amount": -6.25,
+		"category": "Food & Drink",
+		"type": "expense",
+		"daysAgo": 35,
+		"at": [8, 35]
+	},
+	{
+		"id": "txn_80a5d413",
+		"merchant": "Northside Pharmacy",
+		"amount": -16.9,
+		"category": "Health",
+		"type": "expense",
+		"daysAgo": 38,
+		"at": [18, 20]
+	},
+	{
+		"id": "txn_38fe90b1",
+		"merchant": "Hardware Depot",
+		"amount": -64.3,
+		"category": "Shopping",
+		"type": "expense",
+		"daysAgo": 42,
+		"at": [14, 2]
+	},
+	{
+		"id": "txn_1f6ac0d8",
+		"merchant": "Freelance Invoice #205",
+		"amount": 480.0,
+		"category": "Income",
+		"type": "income",
+		"daysAgo": 47,
+		"at": [10, 15]
+	},
+	{
+		"id": "txn_69e2b7c0",
+		"merchant": "Greenline Grocers",
+		"amount": -58.1,
+		"category": "Groceries",
+		"type": "expense",
+		"daysAgo": 52,
+		"at": [12, 50]
+	},
+	{
+		"id": "txn_d3810fa4",
+		"merchant": "Renters Insurance",
+		"amount": -142.0,
+		"category": "Bills & Utilities",
+		"type": "expense",
+		"daysAgo": 58,
+		"at": [8, 0]
+	},
+	{
+		"id": "txn_47c9e025",
+		"merchant": "Metro Transit",
+		"amount": -2.9,
+		"category": "Transport",
+		"type": "expense",
+		"daysAgo": 63,
+		"at": [8, 10]
+	},
+	{
+		"id": "txn_e1b0724d",
+		"merchant": "Cinema Eleven",
+		"amount": -19.0,
+		"category": "Entertainment",
+		"type": "expense",
+		"daysAgo": 75,
+		"at": [19, 45]
+	}
+]
