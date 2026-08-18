@@ -5,6 +5,8 @@ and category per row, day grouping with sticky headers, an income/expense summar
 type and date range, debounced merchant search, and explicit loading, error and empty states,
 built in TypeScript strict mode with a layered architecture.
 
+<img width="603" height="1311" alt="simulator_screenshot_F9FDD2B2-A462-47E2-BA02-4A5283EAADF8" src="https://github.com/user-attachments/assets/3834183d-47ad-43e8-89cf-f921c4b623fd" />
+
 ## Features
 
 | Requirement | Where |
