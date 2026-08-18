@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-function App() {
+export function App() {
 	const isDarkMode = useColorScheme() === "dark";
 
 	return (
@@ -28,5 +28,3 @@ const style = StyleSheet.create({
 		alignItems: "center",
 	},
 });
-
-export default App;
